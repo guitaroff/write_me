@@ -1,0 +1,9 @@
+doctype html
+html
+  head
+    meta content='text/html; charset=UTF-8' http-equiv='Content-Type'
+  body
+    h1 = "Письмо от #{@message.name}"
+    p = "Почта: #{@message.email}"
+    p = "Телефон: #{@message.phone}"
+    p = "Текст письма: #{@message.body}"

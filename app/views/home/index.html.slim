@@ -99,28 +99,28 @@ section.page-section id="contact"
 
     .row
       .col-lg-8.mx-auto
-        form name="sentMessage" id="contactForm" novalidate="novalidate"
+        = form_for @message, url: messages_path, method: :post do |f|
           .control-group
             .form-group.floating-label-form-group.controls.mb-0.pb-2
-              label Name
-              input.form-control id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name."
+              = f.label :name
+              = f.text_field :name, class: 'form-control', id: 'name', placeholder: 'Name', required: 'required'
               p.help-block.text-danger
           .control-group
             .form-group.floating-label-form-group.controls.mb-0.pb-2
-              label Email Address
-              input.form-control id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address."
+              = f.label :email
+              = f.text_field :email, class: 'form-control', id: 'email', placeholder: 'Email Address', required: 'required'
               p.help-block.text-danger
           .control-group
             .form-group.floating-label-form-group.controls.mb-0.pb-2
-              label Phone Number
-              input.form-control id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number."
+              = f.label :phone
+              = f.text_field :phone, class: 'form-control', id: 'phone', type: 'tel', placeholder: 'Phone Number', required: 'required'
               p.help-block.text-danger
           .control-group
             .form-group.floating-label-form-group.controls.mb-0.pb-2
-              label Message
-              textarea.form-control id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."
+              = f.label :body
+              = f.text_field :body, class: 'form-control', id: 'body', rows: '5', placeholder: 'Message', required: 'required'
               p.help-block.text-danger
           br
           div#success
           div.form-group
-            button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton" Send
+            = f.submit 'Отправить', class: 'btn btn-primary btn-xl'
