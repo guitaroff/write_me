@@ -85,3 +85,42 @@ section.page-section.bg-primary.text-white.mb-0 id="about"
       a.btn.btn-xl.btn-outline-light href="https://startbootstrap.com/themes/freelancer/"
         i.fas.fa-download.mr-2
         = 'Free Download!'
+
+section.page-section id="contact"
+  .container
+
+    h2.page-section-heading.text-center.text-uppercase.text-secondary.mb-0 Contact Me
+
+    .divider-custom
+      .divider-custom-line
+      .divider-custom-icon
+        i.fas.fa-star
+      .divider-custom-line
+
+    .row
+      .col-lg-8.mx-auto
+        form name="sentMessage" id="contactForm" novalidate="novalidate"
+          .control-group
+            .form-group.floating-label-form-group.controls.mb-0.pb-2
+              label Name
+              input.form-control id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name."
+              p.help-block.text-danger
+          .control-group
+            .form-group.floating-label-form-group.controls.mb-0.pb-2
+              label Email Address
+              input.form-control id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address."
+              p.help-block.text-danger
+          .control-group
+            .form-group.floating-label-form-group.controls.mb-0.pb-2
+              label Phone Number
+              input.form-control id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number."
+              p.help-block.text-danger
+          .control-group
+            .form-group.floating-label-form-group.controls.mb-0.pb-2
+              label Message
+              textarea.form-control id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."
+              p.help-block.text-danger
+          br
+          div#success
+          div.form-group
+            button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton" Send
