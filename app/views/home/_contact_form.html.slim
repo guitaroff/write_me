@@ -1,0 +1,25 @@
+= form_for @message, url: messages_path, method: :post, html: { id: 'contactForm' } do |f|
+  .control-group
+    .form-group.floating-label-form-group.controls.mb-0.pb-2
+      = f.label :name
+      = f.text_field :name, class: 'form-control', id: 'name', placeholder: 'Name', required: 'required', data: {'validation-required-message' => 'Please enter your name.'}
+      p.help-block.text-danger
+  .control-group
+    .form-group.floating-label-form-group.controls.mb-0.pb-2
+      = f.label :email
+      = f.text_field :email, class: 'form-control', id: 'email', placeholder: 'Email Address', required: 'required', data: {'validation-required-message' => 'Please enter your email address.'}
+      p.help-block.text-danger
+  .control-group
+    .form-group.floating-label-form-group.controls.mb-0.pb-2
+      = f.label :phone
+      = f.text_field :phone, class: 'form-control', id: 'phone', type: 'tel', placeholder: 'Phone Number', required: 'required'
+      p.help-block.text-danger
+  .control-group
+    .form-group.floating-label-form-group.controls.mb-0.pb-2
+      = f.label :body
+      = f.text_area :body, class: 'form-control', id: 'body', rows: '5', placeholder: 'Message', required: 'required'
+      p.help-block.text-danger
+  br
+  div#success
+  div.form-group
+    = f.submit 'Отправить', class: 'btn btn-primary btn-xl'
