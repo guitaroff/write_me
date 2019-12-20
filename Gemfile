@@ -17,6 +17,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'slim-rails'
 gem 'jquery_mask_rails'
+gem 'russian_phone'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
