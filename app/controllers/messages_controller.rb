@@ -2,12 +2,15 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new message_params
 
-    if @message.valid?
-      @message.save
-      MessageMailer.contact(@message).deliver_now
+    respond_to do |format|
+      if @message.valid?
+        @message.save
+        MessageMailer.contact(@message).deliver_now
+        format.js
+      else
+        format.js { render 'create_failure' }
+      end
     end
-
-    redirect_to root_path
   end
 
   private
